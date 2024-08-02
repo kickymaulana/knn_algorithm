@@ -192,7 +192,7 @@
                                 <div class="alert alert-danger">Are you sure want delete "<b><?php echo $user->username?></b>?" ?</div>
                                 </div>
                                 <div class="modal-footer">
-                                <input type="hidden" class="form-control" value="<?php echo  $user->user_id?>" name="user_id" required="required">
+                                <input type="hidden" class="form-control" value="<?php echo  $user->nik?>" name="nik" required="required">
                                 <input type="hidden" class="form-control" value="<?php echo  $user->username?>" name="username" required="required">
                                 <button type="submit" class="btn btn-danger">Ya</button>
                                 <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-large"></i>&nbsp;Batal</button>

@@ -46,8 +46,8 @@
                             <label for="" class="control-label">Nama Lengkap</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" class="form-control"  name="user_profile_fullname" value="<?php echo set_value("user_profile_fullname" , $user->user_profile_fullname   );  ?>" readonly />
-                            <span style="color:red"><?php echo form_error("user_profile_fullname"); ?></span>
+                            <input type="text" class="form-control"  name="nama_lengkap" value="<?php echo set_value("nama_lengkap" , $user->nama_lengkap   );  ?>" readonly />
+                            <span style="color:red"><?php echo form_error("nama_lengkap"); ?></span>
                         </div>
                     </div>
                     <!--  -->
@@ -57,8 +57,8 @@
                             <label for="" class="control-label">Alamat</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" class="form-control"  name="user_profile_address" value="<?php echo set_value("user_profile_address",$user->user_profile_address  ); ?>"readonly  />
-                            <span style="color:red"><?php echo form_error("user_profile_address"); ?></span>
+                            <input type="text" class="form-control"  name="alamat" value="<?php echo set_value("alamat",$user->alamat  ); ?>"readonly  />
+                            <span style="color:red"><?php echo form_error("alamat"); ?></span>
                         </div>
                     </div>
                     <!--  -->
@@ -68,63 +68,63 @@
                             <label for="" class="control-label">No Telp</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" class="form-control"  name="user_profile_phone" value="<?php echo set_value("user_profile_phone" , $user->user_profile_phone); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("user_profile_phone"); ?></span>
+                            <input type="text" class="form-control"  name="no_hp" value="<?php echo set_value("no_hp" , $user->no_hp); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("no_hp"); ?></span>
                         </div>
                     </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="" class="control-label">Semester</label>
+                            <label for="" class="control-label">Rencana Tanam</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" step="any" class="form-control"  name="data_semester" value="<?php echo set_value("data_semester" , $user->data_semester); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("data_semester"); ?></span>
+                            <input type="number" step="any" class="form-control"  name="rencana_tanam" value="<?php echo set_value("rencana_tanam" , $user->rencana_tanam); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("rencana_tanam"); ?></span>
                         </div>
                     </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="" class="control-label">IPK</label>
+                            <label for="" class="control-label">umt1</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" step="any" class="form-control"  name="data_IPK" value="<?php echo set_value("data_IPK" , $user->data_IPK); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("data_IPK"); ?></span>
+                            <input type="number" step="any" class="form-control"  name="umt1" value="<?php echo set_value("umt1" , $user->umt1); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("umt1"); ?></span>
                         </div>
                     </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="" class="control-label">Gaji Orang Tua</label>
+                            <label for="" class="control-label">umt2</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" step="any" class="form-control"  name="data_gaji_ortu" value="<?php echo set_value("data_gaji_ortu" , $user->data_gaji_ortu); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("data_gaji_ortu"); ?></span>
+                            <input type="number" step="any" class="form-control"  name="umt2" value="<?php echo set_value("umt2" , $user->umt2); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("umt2"); ?></span>
                         </div>
                     </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="" class="control-label">Tanggungan Orang Tua</label>
+                            <label for="" class="control-label">nmt1</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" step="any" class="form-control"  name="data_tanggungan" value="<?php echo set_value("data_tanggungan" , $user->data_tanggungan); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("data_tanggungan"); ?></span>
+                            <input type="number" step="any" class="form-control"  name="nmt1" value="<?php echo set_value("nmt1" , $user->nmt1); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("nmt1"); ?></span>
                         </div>
                     </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="" class="control-label">UKT</label>
+                            <label for="" class="control-label">nmt2</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" step="any" class="form-control"  name="data_UKT" value="<?php echo set_value("data_UKT" , $user->data_UKT ); ?>" readonly/>
-                            <span style="color:red"><?php echo form_error("data_UKT"); ?></span>
+                            <input type="number" step="any" class="form-control"  name="nmt2" value="<?php echo set_value("nmt2" , $user->nmt2 ); ?>" readonly/>
+                            <span style="color:red"><?php echo form_error("nmt2"); ?></span>
                         </div>
                     </div>
                     <!--  -->

@@ -115,7 +115,7 @@ class User_management extends Admin_Controller {
   }
    public function deleteUser()
    {
-   $data_user['user_id'] = $this->input->post('user_id');
+   $data_user['nik'] = $this->input->post('nik');
     
     $result = $this->m_admin->deleteUser( $data_user );
     if( $result ){
