@@ -136,7 +136,7 @@ class User_management extends Admin_Controller {
 
   public function delete_all()
    {
-    $curr_user_id = $this->session->userdata( "user_id" );
+    $curr_user_id = $this->session->userdata( "username" );
     $this->m_user->delete_all( $curr_user_id );
     // echo $curr_user_id; return;
     

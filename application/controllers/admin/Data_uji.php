@@ -91,24 +91,25 @@ class Data_uji extends Admin_Controller {
             // Jadi dilewat saja, tidak usah diimport
             if($numrow > 1 &&  !empty( $row['A'] ) ){
                 // $data_uji["data_name"] = $row['A'] ;
-                $data_uji["data_IPK"] = $row['B'];
-                $data_uji["data_semester"] = $row['C'];
-                $data_uji["data_gaji_ortu"] = $row['D'];
-                $data_uji["data_tanggungan"] = $row['E'];
-                $data_uji["data_UKT"] = $row['F'];
+                $data_uji["rencana_tanam"] = $row['C'];
+                $data_uji["umt1"] = $row['D'];
+                $data_uji["umt2"] = $row['E'];
+                $data_uji["nmt1"] = $row['F'];
+                $data_uji["nmt2"] = $row['G'];
                 $data_uji["data_label"] = -1;
                 ##########################################################
-                $data_profile["user_profile_fullname"] = $row['A'];
-                $data_profile["user_profile_address"] = $row['G'];
-                $data_profile["user_profile_email"] = $row['H'];
-                $data_profile["user_profile_phone"] = $row['I'];
+                $data_profile["nama_lengkap"] = $row['B'];
+                $data_profile["alamat"] = $row['H'];
+                $data_profile["email"] = $row['I'];
+                $data_profile["no_hp"] = $row['J'];
                 //add user
                 $identitas = time();
-                $data_user['user_username'] = $identitas + $numrow;
-                $data_user['user_password'] = md5( $identitas );
+                $data_user["nik"] = $row['A'];
+                $data_user['username'] = $identitas + $numrow;
+                $data_user['password'] = md5( $identitas );
                 $result = $this->m_register->register($data_user, $data_profile);
                 if( $result['status'] ){
-                    $data_uji["user_id"] = $result['message']['user_id'];
+                    $data_uji["nik"] = $result['message']['nik'];
                     // Kita push (add) array data ke variabel data
                     array_push($__data_uji, $data_uji ) ;
                 }
