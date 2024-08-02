@@ -25,7 +25,7 @@ class User extends CI_Controller
                 if( $result->status != '0' ){
                         $data = array(
                                 'nik' => $result->nik,
-                                'nik' => $result->nik,
+                                'username' => $result->username,
                                 'nama_lengkap' => $result->nama_lengkap,
                                 'level' => $result->level,
                                 'status' => $result->status,

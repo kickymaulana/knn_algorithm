@@ -13,8 +13,8 @@ class User_Controller extends MY_Controller
     {
        parent::__construct();
        if(
-            !($this->session->userdata('user_id')) || 
-            $this->session->userdata('user_status') == 0 
+            !($this->session->userdata('nik')) || 
+            $this->session->userdata('status') == 0 
         )
         {
             // redirect(site_url('/landing'));
@@ -28,7 +28,7 @@ class Admin_Controller extends User_Controller
     {
        parent::__construct();
         if(
-            $this->session->userdata('user_level') != 1
+            $this->session->userdata('level') != 1
         )
         {
             redirect(site_url('/user/login'));
