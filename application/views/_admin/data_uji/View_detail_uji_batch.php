@@ -39,7 +39,7 @@
     ?>
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title"> Pengujian Jarak ( <b><?php echo $DATA['user_profile_fullname']?> </b> )</h3>
+                    <h3 class="box-title"> Pengujian Jarak ( <b><?php echo $DATA['nama_lengkap']?> </b> )</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -55,7 +55,7 @@
                         </thead>
                         <tbody>
                             <?php 
-                                $distances = $DATA['distances'];
+                                $distances = $DATA['jarak'];
                                 $no=1;
                                 foreach( $distances as $file ):
                                     $file = (object) $file;
@@ -65,10 +65,10 @@
                                         <?php echo $no?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_name  ?>
+                                        <?php echo $file->nama_lengkap  ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->distances ?>
+                                        <?php echo $file->jarak ?>
                                     </td>
                                     <td>
                                         <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
@@ -115,10 +115,10 @@
                                             <?php echo $no?>
                                         </td>
                                         <td>
-                                            <?php echo $file->data_name  ?>
+                                            <?php echo $file->nama_lengkap  ?>
                                         </td>
                                         <td>
-                                            <?php echo $file->distances ?>
+                                            <?php echo $file->jarak ?>
                                         </td>
                                         <td>
                                             <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
@@ -141,11 +141,11 @@
                             <tr >
                                 <th style="width:50px">No</th>
                                 <th>Nama</th>
-                                <th>IPK </th>
-                                <th>Semester</th>
-                                <th>Gaji Orang Tua</th>
-                                <th>Tanggungan Orang Tua</th>
-                                <th>UKT</th>
+                                <th>rencana_tanam </th>
+                                <th>umt1</th>
+                                <th>umt2</th>
+                                <th>nmt1</th>
+                                <th>nmt2</th>
                                 <th>Label</th>                    
                             </tr>
                             </thead>
@@ -160,22 +160,22 @@
                                         <?php echo $no?>
                                     </td>
                                     <td>
-                                        <?php echo $file->user_profile_fullname  ?>
+                                        <?php echo $file->nama_lengkap  ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_IPK ?>
+                                        <?php echo $file->rencana_tanam ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_semester ?>
+                                        <?php echo $file->umt1 ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_gaji_ortu ?>
+                                        <?php echo $file->umt2 ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_tanggungan ?>
+                                        <?php echo $file->nmt1 ?>
                                     </td>
                                     <td>
-                                        <?php echo $file->data_UKT ?>
+                                        <?php echo $file->nmt2 ?>
                                     </td>
                                     <td>
                                         <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
@@ -207,12 +207,12 @@
                     <th style="width:50px">No</th>
                     <th>Nama</th>
                     <!-- <th style="background-color:red">IPK </th> -->
-                    <th >IPK </th>
-                    <th>Semester</th>
+                    <th >rencana_tanam </th>
+                    <th>umt1</th>
                     <!-- <th style="background-color:green" >Gaji Orang Tua</th> -->
-                    <th  >Gaji Orang Tua</th>
-                    <th>Tanggungan Orang Tua</th>
-                    <th>UKT</th>
+                    <th  >umt2</th>
+                    <th>nmt1</th>
+                    <th>nmt2</th>
                     <th>Label</th>
                     <th> X </th>
                     
@@ -228,22 +228,22 @@
                             <?php echo $no?>
                         </td>
                         <td>
-                            <?php echo $file->user_profile_fullname  ?>
+                            <?php echo $file->nama_lengkap  ?>
                         </td>
                         <td>
-                            <?php echo $file->data_IPK ?>
+                            <?php echo $file->rencana_tanam ?>
                         </td>
                         <td>
-                            <?php echo $file->data_semester ?>
+                            <?php echo $file->umt1 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_gaji_ortu ?>
+                            <?php echo $file->umt2 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_tanggungan ?>
+                            <?php echo $file->nmt1 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_UKT ?>
+                            <?php echo $file->nmt2 ?>
                         </td>
                         <td>
                             <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>

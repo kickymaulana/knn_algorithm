@@ -207,12 +207,12 @@ class Data_testing extends Admin_Controller {
             // Artinya karena baris pertama adalah nama-nama kolom
             // Jadi dilewat saja, tidak usah diimport
             if($numrow > 1 &&  !empty( $row['A'] ) ){
-                $data_test["data_name"] = $row['A'] ;
-                $data_test["data_IPK"] = $row['B'];
-                $data_test["data_semester"] = $row['C'];
-                $data_test["data_gaji_ortu"] = $row['D'];
-                $data_test["data_tanggungan"] = $row['E'];
-                $data_test["data_UKT"] = $row['F'];
+                $data_test["nama_lengkap"] = $row['A'] ;
+                $data_test["rencana_tanam"] = $row['B'];
+                $data_test["umt1"] = $row['C'];
+                $data_test["umt2"] = $row['D'];
+                $data_test["nmt1"] = $row['E'];
+                $data_test["nmt2"] = $row['F'];
                 $data_test["data_label"] = $row['G'];
                 // Kita push (add) array data ke variabel data
                 array_push($data_testing, $data_test ) ;

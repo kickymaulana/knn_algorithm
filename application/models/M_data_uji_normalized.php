@@ -31,8 +31,8 @@ class M_data_uji_normalized extends CI_Model{
     public function rangking( $data_id = -1, $mode = "object", $quota = NULL )
     {
         $sql = "
-            SELECT a.*, b.user_profile_fullname from data_uji_normalized a
-            left join user_profile b on b.user_id = a.user_id
+            SELECT a.*, b.nama_lengkap from data_uji_normalized a
+            left join user_profile b on b.nik = a.nik
         ";
         if( $data_id != -1 ){
             $sql .= "
@@ -44,8 +44,8 @@ class M_data_uji_normalized extends CI_Model{
             ORDER BY
             a.data_label DESC,
             a.tetangga_terdekat ASC,
-            a.data_IPK DESC,
-            a.data_gaji_ortu ASC
+            a.umt1 DESC,
+            a.umt2 ASC
         ";  
 
         if( $quota != NULL ){
