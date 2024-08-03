@@ -261,25 +261,25 @@ class Data_testing extends Admin_Controller {
         for( $i=0; $i< count( $files ); $i++ )
         {
             // echo round( $files[ $i ]->data_UKT,3)."<br>";
-            $len = $min_max["max_data_semester"] -  $min_max["min_data_semester"];
-            $files[ $i ]->data_semester  =  ( ( $files[ $i ]->data_semester - $min_max["min_data_semester"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_semester = round( $files[ $i ]->data_semester, 4 );
+            $len = $min_max["max_rencana_tanam"] -  $min_max["min_rencana_tanam"];
+            $files[ $i ]->rencana_tanam  =  ( ( $files[ $i ]->rencana_tanam - $min_max["min_rencana_tanam"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->rencana_tanam = round( $files[ $i ]->rencana_tanam, 4 );
 
-            $len = $min_max["max_data_IPK"] -  $min_max["min_data_IPK"];
-            $files[ $i ]->data_IPK  =  ( ( $files[ $i ]->data_IPK - $min_max["min_data_IPK"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_IPK = round( $files[ $i ]->data_IPK, 4 );
+            $len = $min_max["max_umt1"] -  $min_max["min_umt1"];
+            $files[ $i ]->umt1  =  ( ( $files[ $i ]->umt1 - $min_max["min_umt1"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->umt1 = round( $files[ $i ]->umt1, 4 );
 
-            $len = $min_max["max_data_gaji_ortu"] -  $min_max["min_data_gaji_ortu"];
-            $files[ $i ]->data_gaji_ortu  =  ( ( $files[ $i ]->data_gaji_ortu - $min_max["min_data_gaji_ortu"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_gaji_ortu = round( $files[ $i ]->data_gaji_ortu, 4 );
+            $len = $min_max["max_umt2"] -  $min_max["min_umt2"];
+            $files[ $i ]->umt2  =  ( ( $files[ $i ]->umt2 - $min_max["min_umt2"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->umt2 = round( $files[ $i ]->umt2, 4 );
 
-            $len = $min_max["max_data_UKT"] -  $min_max["min_data_UKT"];
-            $files[ $i ]->data_UKT  =  ( ( $files[ $i ]->data_UKT - $min_max["min_data_UKT"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_UKT = round( $files[ $i ]->data_UKT, 4 );
+            $len = $min_max["max_nmt1"] -  $min_max["min_nmt1"];
+            $files[ $i ]->nmt1  =  ( ( $files[ $i ]->nmt1 - $min_max["min_nmt1"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->nmt1 = round( $files[ $i ]->nmt1, 4 );
 
-            $len = $min_max["max_data_tanggungan"] -  $min_max["min_data_tanggungan"];
-            $files[ $i ]->data_tanggungan  =  ( ( $files[ $i ]->data_tanggungan - $min_max["min_data_tanggungan"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_tanggungan = round( $files[ $i ]->data_tanggungan, 4 );
+            $len = $min_max["max_nmt2"] -  $min_max["min_nmt2"];
+            $files[ $i ]->nmt2  =  ( ( $files[ $i ]->nmt2 - $min_max["min_nmt2"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->nmt2 = round( $files[ $i ]->nmt2, 4 );
         }
         
         if( $this->m_data_testing_normalized->create( $files ) ){
