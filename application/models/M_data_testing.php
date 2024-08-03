@@ -46,16 +46,16 @@ class M_data_testing extends CI_Model{
             return array();
          }
         return array(
-            "min_data_semester" => $this->db->query("SELECT a.data_semester FROM data_testing a ORDER BY a.data_semester ASC LIMIT 1")->result(  )[0]->data_semester,
-            "max_data_semester" => $this->db->query("SELECT a.data_semester FROM data_testing a ORDER BY a.data_semester DESC LIMIT 1")->result(  )[0]->data_semester,
-            "min_data_IPK" => $this->db->query("SELECT a.data_IPK FROM data_testing a ORDER BY a.data_IPK ASC LIMIT 1")->result(  )[0]->data_IPK,
-            "max_data_IPK" => $this->db->query("SELECT a.data_IPK FROM data_testing a ORDER BY a.data_IPK DESC LIMIT 1")->result(  )[0]->data_IPK,
-            "min_data_gaji_ortu" => $this->db->query("SELECT a.data_gaji_ortu FROM data_testing a ORDER BY a.data_gaji_ortu ASC LIMIT 1")->result(  )[0]->data_gaji_ortu,
-            "max_data_gaji_ortu" => $this->db->query("SELECT a.data_gaji_ortu FROM data_testing a ORDER BY a.data_gaji_ortu DESC LIMIT 1")->result(  )[0]->data_gaji_ortu,
-            "min_data_UKT" => $this->db->query("SELECT a.data_UKT FROM data_testing a ORDER BY a.data_UKT ASC LIMIT 1")->result(  )[0]->data_UKT,
-            "max_data_UKT" => $this->db->query("SELECT a.data_UKT FROM data_testing a ORDER BY a.data_UKT DESC LIMIT 1")->result(  )[0]->data_UKT,
-            "min_data_tanggungan" => $this->db->query("SELECT a.data_tanggungan FROM data_testing a ORDER BY a.data_tanggungan ASC LIMIT 1")->result(  )[0]->data_tanggungan,
-            "max_data_tanggungan" => $this->db->query("SELECT a.data_tanggungan FROM data_testing a ORDER BY a.data_tanggungan DESC LIMIT 1")->result(  )[0]->data_tanggungan
+            "min_rencana_tanam" => $this->db->query("SELECT a.rencana_tanam FROM data_testing a ORDER BY a.rencana_tanam ASC LIMIT 1")->result(  )[0]->rencana_tanam,
+            "max_rencana_tanam" => $this->db->query("SELECT a.rencana_tanam FROM data_testing a ORDER BY a.rencana_tanam DESC LIMIT 1")->result(  )[0]->rencana_tanam,
+            "min_umt1" => $this->db->query("SELECT a.umt1 FROM data_testing a ORDER BY a.umt1 ASC LIMIT 1")->result(  )[0]->umt1,
+            "max_umt1" => $this->db->query("SELECT a.umt1 FROM data_testing a ORDER BY a.umt1 DESC LIMIT 1")->result(  )[0]->umt1,
+            "min_umt2" => $this->db->query("SELECT a.umt2 FROM data_testing a ORDER BY a.umt2 ASC LIMIT 1")->result(  )[0]->umt2,
+            "max_umt2" => $this->db->query("SELECT a.umt2 FROM data_testing a ORDER BY a.umt2 DESC LIMIT 1")->result(  )[0]->umt2,
+            "min_nmt1" => $this->db->query("SELECT a.nmt1 FROM data_testing a ORDER BY a.nmt1 ASC LIMIT 1")->result(  )[0]->nmt1,
+            "max_nmt1" => $this->db->query("SELECT a.nmt1 FROM data_testing a ORDER BY a.nmt1 DESC LIMIT 1")->result(  )[0]->nmt1,
+            "min_nmt2" => $this->db->query("SELECT a.nmt2 FROM data_testing a ORDER BY a.nmt2 ASC LIMIT 1")->result(  )[0]->nmt2,
+            "max_nmt2" => $this->db->query("SELECT a.nmt2 FROM data_testing a ORDER BY a.nmt2 DESC LIMIT 1")->result(  )[0]->nmt2
         );
          
     }

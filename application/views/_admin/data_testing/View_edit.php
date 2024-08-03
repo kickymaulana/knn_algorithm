@@ -30,38 +30,38 @@
                       <div class="row  ">
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="text" class="form-control" placeholder="Nama" name="data_name[<?php echo $ind ?>]" value="<?php echo set_value("data_name[$ind]", $file->data_name  ); ?>"/>
-                                  <span style="color:red"><?php echo form_error("data_name[$ind]"); ?></span>
+                                  <input type="text" class="form-control" placeholder="Nama" name="nama_lengkap[<?php echo $ind ?>]" value="<?php echo set_value("nama_lengkap[$ind]", $file->nama_lengkap  ); ?>"/>
+                                  <span style="color:red"><?php echo form_error("nama_lengkap[$ind]"); ?></span>
                               </div>
                           </div> 
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="number"  step="any"  class="form-control" placeholder="Semester" name="data_semester[<?php echo $ind ?>]" value="<?php echo set_value("data_semester[$ind]",  $file->data_semester ); ?>"/>
-                                  <span style="color:red"><?php echo form_error("data_semester[$ind]"); ?></span>
+                                  <input type="number"  step="any"  class="form-control" placeholder="rencana_tanam" name="rencana_tanam[<?php echo $ind ?>]" value="<?php echo set_value("rencana_tanam[$ind]",  $file->rencana_tanam ); ?>"/>
+                                  <span style="color:red"><?php echo form_error("rencana_tanam[$ind]"); ?></span>
                               </div>
                           </div> 
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="number" step="any" class="form-control" placeholder="IPK" name="data_IPK[<?php echo $ind ?>]" value="<?php echo set_value('data_IPK['.$ind.']',  $file->data_IPK); ?>"/>
-                                  <span style="color:red"><?php echo form_error('data_IPK['.$ind.']'); ?></span>
+                                  <input type="number" step="any" class="form-control" placeholder="umt1" name="umt1[<?php echo $ind ?>]" value="<?php echo set_value('umt1['.$ind.']',  $file->umt1); ?>"/>
+                                  <span style="color:red"><?php echo form_error('umt1['.$ind.']'); ?></span>
                               </div>
                           </div> 
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="number" step="any" class="form-control" placeholder="Gaji Orang Tua" name="data_gaji_ortu[<?php echo $ind ?>]" value="<?php echo set_value('data_gaji_ortu['.$ind.']',  $file->data_gaji_ortu); ?>"/>
-                                  <span style="color:red"><?php echo form_error('data_gaji_ortu['.$ind.']'); ?></span>
+                                  <input type="number" step="any" class="form-control" placeholder="umt2" name="umt2[<?php echo $ind ?>]" value="<?php echo set_value('umt2['.$ind.']',  $file->umt2); ?>"/>
+                                  <span style="color:red"><?php echo form_error('umt2['.$ind.']'); ?></span>
                               </div>
                           </div> 
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="number" step="any" class="form-control" placeholder="Tanggungan Orang Tua" name="data_tanggungan[<?php echo $ind ?>]" value="<?php echo set_value('data_tanggungan['.$ind.']', $file->data_tanggungan); ?>"/>
-                                  <span style="color:red"><?php echo form_error('data_tanggungan['.$ind.']'); ?></span>
+                                  <input type="number" step="any" class="form-control" placeholder="nmt1" name="nmt1[<?php echo $ind ?>]" value="<?php echo set_value('nmt1['.$ind.']', $file->nmt1); ?>"/>
+                                  <span style="color:red"><?php echo form_error('nmt1['.$ind.']'); ?></span>
                               </div>
                           </div> 
                           <div class="col-xs-2 ">
                               <div class="form-group has-feedback">
-                                  <input type="number" step="any" class="form-control" placeholder="UKT" name="data_UKT[<?php echo $ind ?>]" value="<?php echo set_value('data_UKT['.$ind.']', $file->data_UKT); ?>"/>
-                                  <span style="color:red"><?php echo form_error('data_UKT['.$ind.']'); ?></span>
+                                  <input type="number" step="any" class="form-control" placeholder="nmt2" name="nmt2[<?php echo $ind ?>]" value="<?php echo set_value('nmt2['.$ind.']', $file->nmt2); ?>"/>
+                                  <span style="color:red"><?php echo form_error('nmt2['.$ind.']'); ?></span>
                               </div>
                           </div> 
                       </div>

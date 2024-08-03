@@ -23,14 +23,14 @@ class Data_testing extends Admin_Controller {
   public function index() 
   {
       $log['log_datetime'] = date("Y-m-d H:i:s");
-      $log['log_message'] = "HOMEPAGE :  user => ".$this->session->userdata('user_username')."( id = ".$this->session->userdata('user_id').") ; result => ";
-      $log['user_id'] = $this->session->userdata('user_id');
+      $log['log_message'] = "HOMEPAGE :  user => ".$this->session->userdata('username')."( id = ".$this->session->userdata('nik').") ; result => ";
+      $log['nik'] = $this->session->userdata('nik');
       $log['log_message'] .= "true";
       $this->m_log->inserLog( $log );
     //   $data=$this->m_kost->getData( $this->session->userdata('user_id') );
     //   $data['files'] = $data;
       $data['page_name'] = "Data Testing";
-      $data['user'] = $this->m_user->getUser( $this->session->userdata('user_id') )[0];
+      $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') )[0];
       $data['files'] = $this->m_data_testing->read( );
       $data['files_normalized'] = $this->m_data_testing_normalized->read(  );
       $this->load->view("_admin/_template/header");
@@ -42,38 +42,39 @@ class Data_testing extends Admin_Controller {
   public function create()
   {     
         $data['page_name'] = "Tambah Data Testing";
-        $inpust =  ( $this->input->post('data_name[]') == null )? array(): $this->input->post('data_name[]')  ;
+        $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
         // echo var_dump( $inpust );
         foreach($inpust as $ind=>$val) 
         {
-            if(  !empty( $this->input->post('data_name')[$ind] ) ){
-                $this->form_validation->set_rules('data_name['.$ind.']','data_name','trim|required');
-                $this->form_validation->set_rules('data_semester['.$ind.']','data_semester','trim|required');
-                $this->form_validation->set_rules('data_IPK['.$ind.']','data_IPK','trim|required');
-                $this->form_validation->set_rules('data_gaji_ortu['.$ind.']','data_gaji_ortu','trim|required');
-                $this->form_validation->set_rules('data_UKT['.$ind.']','data_UKT','trim|required');
-                $this->form_validation->set_rules('data_tanggungan['.$ind.']','data_tanggungan','trim|required');
+            if(  !empty( $this->input->post('nama_lengkap')[$ind] ) ){
+                $this->form_validation->set_rules('nama_lengkap['.$ind.']','nama_lengkap','trim|required');
+                $this->form_validation->set_rules('rencana_tanam['.$ind.']','rencana_tanam','trim|required');
+                $this->form_validation->set_rules('umt1['.$ind.']','umt1','trim|required');
+                $this->form_validation->set_rules('umt2['.$ind.']','umt2','trim|required');
+                $this->form_validation->set_rules('nmt1['.$ind.']','nmt1','trim|required');
+                $this->form_validation->set_rules('nmt2['.$ind.']','nmt2','trim|required');
                 $this->form_validation->set_rules('data_label['.$ind.']','data_label','trim|required');
             }
             
         }
+
 
         
 
         if ($this->form_validation->run() == true) 
         {
             $data_testing = array();
-            $inpust =  ( $this->input->post('data_name[]') == null )? array(): $this->input->post('data_name[]')  ;
+            $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
             foreach($inpust as $ind=>$val) 
             {
                 $data = array();
-                if(  !empty( $this->input->post('data_name')[$ind] ) ){
-                    $data_test["data_name"] = $this->input->post('data_name')[$ind] ;
-                    $data_test["data_semester"] = $this->input->post('data_semester')[$ind] ;
-                    $data_test["data_IPK"] = $this->input->post('data_IPK')[$ind] ;
-                    $data_test["data_gaji_ortu"] = $this->input->post('data_gaji_ortu')[$ind] ;
-                    $data_test["data_UKT"] = $this->input->post('data_UKT')[$ind];
-                    $data_test["data_tanggungan"] = $this->input->post('data_tanggungan')[$ind] ;
+                if(  !empty( $this->input->post('nama_lengkap')[$ind] ) ){
+                    $data_test["nama_lengkap"] = $this->input->post('nama_lengkap')[$ind] ;
+                    $data_test["rencana_tanam"] = $this->input->post('rencana_tanam')[$ind] ;
+                    $data_test["umt1"] = $this->input->post('umt1')[$ind] ;
+                    $data_test["umt2"] = $this->input->post('umt2')[$ind] ;
+                    $data_test["nmt1"] = $this->input->post('nmt1')[$ind];
+                    $data_test["nmt2"] = $this->input->post('nmt2')[$ind] ;
                     $data_test["data_label"] = $this->input->post('data_label')[$ind] ;
 
                     array_push($data_testing, $data_test) ;
@@ -97,8 +98,8 @@ class Data_testing extends Admin_Controller {
 
         }else{
             $data['files'] = $this->m_data_testing->read(  );
-            $data['user'] = $this->m_user->getUser( $this->session->userdata('user_id') );
-            $this->load->view("_admin/_template/header");
+            $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') );
+           $this->load->view("_admin/_template/header");
             $this->load->view("_admin/_template/sidebar_menu");
                 $this->load->view("_admin/data_testing/View_create",$data);
             $this->load->view("_admin/_template/footer");  
@@ -108,17 +109,17 @@ class Data_testing extends Admin_Controller {
   public function edit( $data_id = null )
   {     
         $data['page_name'] = "Edit Data Testing";
-        $inpust =  ( $this->input->post('data_name[]') == null )? array(): $this->input->post('data_name[]')  ;
+        $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
         // echo var_dump( $inpust );
         foreach($inpust as $ind=>$val) 
         {
-            if(  !empty( $this->input->post('data_name')[$ind] ) ){
-                $this->form_validation->set_rules('data_name['.$ind.']','data_name','trim|required');
-                $this->form_validation->set_rules('data_semester['.$ind.']','data_semester','trim|required');
-                $this->form_validation->set_rules('data_IPK['.$ind.']','data_IPK','trim|required');
-                $this->form_validation->set_rules('data_gaji_ortu['.$ind.']','data_gaji_ortu','trim|required');
-                $this->form_validation->set_rules('data_UKT['.$ind.']','data_UKT','trim|required');
-                $this->form_validation->set_rules('data_tanggungan['.$ind.']','data_tanggungan','trim|required');
+            if(  !empty( $this->input->post('nama_lengkap')[$ind] ) ){
+                $this->form_validation->set_rules('nama_lengkap['.$ind.']','nama_lengkap','trim|required');
+                $this->form_validation->set_rules('rencana_tanam['.$ind.']','rencana_tanam','trim|required');
+                $this->form_validation->set_rules('umt1['.$ind.']','umt1','trim|required');
+                $this->form_validation->set_rules('umt2['.$ind.']','umt2','trim|required');
+                $this->form_validation->set_rules('nmt1['.$ind.']','nmt1','trim|required');
+                $this->form_validation->set_rules('nmt2['.$ind.']','nmt2','trim|required');
             }
             
         }
@@ -128,17 +129,17 @@ class Data_testing extends Admin_Controller {
         if ($this->form_validation->run() == true) 
         {
             $data_testing = array();
-            $inpust =  ( $this->input->post('data_name[]') == null )? array(): $this->input->post('data_name[]')  ;
+            $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
             foreach($inpust as $ind=>$val) 
             {
                 $data = array();
-                if(  !empty( $this->input->post('data_name')[$ind] ) ){
-                    $data["data_name"] = $this->input->post('data_name')[$ind] ;
-                    $data["data_semester"] = $this->input->post('data_semester')[$ind] ;
-                    $data["data_IPK"] = $this->input->post('data_IPK')[$ind] ;
-                    $data["data_gaji_ortu"] = $this->input->post('data_gaji_ortu')[$ind] ;
-                    $data["data_UKT"] = $this->input->post('data_UKT')[$ind] ;
-                    $data["data_tanggungan"] = $this->input->post('data_tanggungan')[$ind] ;
+                if(  !empty( $this->input->post('nama_lengkap')[$ind] ) ){
+                    $data["nama_lengkap"] = $this->input->post('nama_lengkap')[$ind] ;
+                    $data["rencana_tanam"] = $this->input->post('rencana_tanam')[$ind] ;
+                    $data["umt1"] = $this->input->post('umt1')[$ind] ;
+                    $data["umt2"] = $this->input->post('umt2')[$ind] ;
+                    $data["nmt1"] = $this->input->post('nmt1')[$ind] ;
+                    $data["nmt2"] = $this->input->post('nmt2')[$ind] ;
 
                     // array_push($data_testing, $data) ;
                 }
@@ -165,7 +166,7 @@ class Data_testing extends Admin_Controller {
             if( $data_id == null ) redirect(site_url('admin/data_testing'));
 
             $data['files'] = $this->m_data_testing->read( $data_id );
-            $data['user'] = $this->m_user->getUser( $this->session->userdata('user_id') );
+            $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') );
             $this->load->view("_admin/_template/header");
             $this->load->view("_admin/_template/sidebar_menu");
                 $this->load->view("_admin/data_testing/View_edit",$data);

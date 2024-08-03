@@ -40,7 +40,7 @@ class M_data_uji extends CI_Model{
     {
         $sql = "
             SELECT a.*, b.* from data_uji a
-            left join user_profile b on b.user_id = a.user_id
+            left join user_profile b on b.nik = a.nik
         ";
         if( $data_id != -1 ){
             $sql .= "

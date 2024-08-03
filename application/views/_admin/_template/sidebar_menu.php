@@ -44,7 +44,7 @@
 
 
 
-  if( $this->session->userdata('user_level') == 1 ){
+  if( $this->session->userdata('level') == 1 ){
 
     array_push($menus, $admin) ;
     // array_push($menus, $category) ;
@@ -60,12 +60,12 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-        <?php if( !empty($this->session->userdata('user_profile_image_path')) ): ?>
-            <img class="img-circle" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('user_profile_image_path') ?> " alt="Jason's Photo" />
+        <?php if( !empty($this->session->userdata('foto')) ): ?>
+            <img class="img-circle" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('foto') ?> " alt="Jason's Photo" />
         <?php endif; ?>
       </div>
       <div class="pull-left info">
-        <?php echo $this->session->userdata('user_profile_fullname')?>
+        <?php echo $this->session->userdata('nama_lengkap')?>
       </div>
     </div>
     <!-- /.search form -->

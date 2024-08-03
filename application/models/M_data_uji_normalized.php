@@ -14,12 +14,12 @@ class M_data_uji_normalized extends CI_Model{
     public function read( $data_id = -1, $mode = "object" )
     {
         $sql = "
-            SELECT a.*, b.user_profile_fullname from data_uji_normalized a
-            left join user_profile b on b.user_id = a.user_id
+            SELECT a.*, b.nama_lengkap from data_uji_normalized a
+            left join user_profile b on b.nik = a.nik
         ";
         if( $data_id != -1 ){
             $sql .= "
-                where a.data_id = '$data_id'
+                where a.nik = '$data_id'
             ";
         }
         if( $mode == "array" )

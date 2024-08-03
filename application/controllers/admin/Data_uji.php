@@ -26,12 +26,12 @@ class Data_uji extends Admin_Controller {
   {
       $log['log_datetime'] = date("Y-m-d H:i:s");
       $log['log_message'] = "HOMEPAGE :  user => ".$this->session->userdata('user_username')."( id = ".$this->session->userdata('user_id').") ; result => ";
-      $log['user_id'] = $this->session->userdata('user_id');
+      $log['nik'] = $this->session->userdata('nik');
       $log['log_message'] .= "true";
       $this->m_log->inserLog( $log );
     
       $data['page_name'] = "Data Uji";
-      $data['user'] = $this->m_user->getUser( $this->session->userdata('user_id') )[0];
+      $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') )[0];
       $data['files'] = $this->m_data_uji->read(  );
       $data['files_normalized'] = $this->m_data_uji_normalized->read(  );
       $data['data_testing']  = $this->m_data_testing_normalized->read(  );
@@ -160,25 +160,25 @@ class Data_uji extends Admin_Controller {
         for( $i=0; $i< count( $files ); $i++ )
         {
             // echo round( $files[ $i ]->data_UKT,3)."<br>";
-            $len = $min_max["max_data_semester"] -  $min_max["min_data_semester"];
-            $files[ $i ]->data_semester  =  ( ( $files[ $i ]->data_semester - $min_max["min_data_semester"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_semester = round( $files[ $i ]->data_semester, 4 );
+            $len = $min_max["max_rencana_tanam"] -  $min_max["min_rencana_tanam"];
+            $files[ $i ]->rencana_tanam  =  ( ( $files[ $i ]->rencana_tanam - $min_max["min_rencana_tanam"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->rencana_tanam = round( $files[ $i ]->rencana_tanam, 4 );
 
-            $len = $min_max["max_data_IPK"] -  $min_max["min_data_IPK"];
-            $files[ $i ]->data_IPK  =  ( ( $files[ $i ]->data_IPK - $min_max["min_data_IPK"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_IPK = round( $files[ $i ]->data_IPK, 4 );
+            $len = $min_max["max_umt1"] -  $min_max["min_umt1"];
+            $files[ $i ]->umt1  =  ( ( $files[ $i ]->umt1 - $min_max["min_umt1"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->umt1 = round( $files[ $i ]->umt1, 4 );
 
-            $len = $min_max["max_data_gaji_ortu"] -  $min_max["min_data_gaji_ortu"];
-            $files[ $i ]->data_gaji_ortu  =  ( ( $files[ $i ]->data_gaji_ortu - $min_max["min_data_gaji_ortu"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_gaji_ortu = round( $files[ $i ]->data_gaji_ortu, 4 );
+            $len = $min_max["max_umt2"] -  $min_max["min_umt2"];
+            $files[ $i ]->umt2  =  ( ( $files[ $i ]->umt2 - $min_max["min_umt2"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->umt2 = round( $files[ $i ]->umt2, 4 );
 
-            $len = $min_max["max_data_UKT"] -  $min_max["min_data_UKT"];
-            $files[ $i ]->data_UKT  =  ( ( $files[ $i ]->data_UKT - $min_max["min_data_UKT"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_UKT = round( $files[ $i ]->data_UKT, 4 );
+            $len = $min_max["max_nmt1"] -  $min_max["min_nmt1"];
+            $files[ $i ]->nmt1  =  ( ( $files[ $i ]->nmt1 - $min_max["min_nmt1"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->nmt1 = round( $files[ $i ]->nmt1, 4 );
 
-            $len = $min_max["max_data_tanggungan"] -  $min_max["min_data_tanggungan"];
-            $files[ $i ]->data_tanggungan  =  ( ( $files[ $i ]->data_tanggungan - $min_max["min_data_tanggungan"] )/( $len ) )* 1 + 0 ;
-            $files[ $i ]->data_tanggungan = round( $files[ $i ]->data_tanggungan, 4 );
+            $len = $min_max["max_nmt2"] -  $min_max["min_nmt2"];
+            $files[ $i ]->nmt2  =  ( ( $files[ $i ]->nmt2 - $min_max["min_nmt2"] )/( $len ) )* 1 + 0 ;
+            $files[ $i ]->nmt2 = round( $files[ $i ]->nmt2, 4 );
         }
         
         if( $this->m_data_uji_normalized->create( $files ) ){
@@ -225,9 +225,9 @@ class Data_uji extends Admin_Controller {
             $DISTANCES = array();
             for( $j=0; $j< count( $data_testing ); $j++ )
             {
-                $dist['distance'] = $this->distance( $data_uji[ $i ], $data_testing[ $j ] );
+                $dist['tetangga_terdekat'] = $this->tetangga_terdekat( $data_uji[ $i ], $data_testing[ $j ] );
                 $dist['data_label'] = $data_testing[ $j ]['data_label'];
-                $dist['data_name'] = $data_testing[ $j ]['data_name'];
+                $dist['nama_lengkap'] = $data_testing[ $j ]['nama_lengkap'];
                 
                 array_push($DISTANCES , $dist) ;
             }
@@ -259,18 +259,18 @@ class Data_uji extends Admin_Controller {
         $data["K_VALUE"] = $K_VALUE;
         $data["NEIGHBOURS"] = $NEIGHBOUR;
         
-        $data["distances"] = $DISTANCES;
+        $data["tetangga_terdekat"] = $DISTANCES;
         //ubah ke array object
-        foreach( $data["distances"]  as  $ind=>$val )
+        foreach( $data["tetangga_terdekat"]  as  $ind=>$val )
         {   
-            $data["distances"][ $ind ] = (object) $data["distances"][ $ind ];
+            $data["tetangga_terdekat"][ $ind ] = (object) $data["tetangga_terdekat"][ $ind ];
         }
         $data["data_uji"] = $data_uji;
         //ubah ke array object
         foreach( $data["data_uji"]  as  $ind=>$val )
         {   
             $data["data_uji"][ $ind ] = (object) $data_uji[ $ind ];
-            unset( $data_uji[ $ind ]['user_profile_fullname'] );
+            unset( $data_uji[ $ind ]['nama_lengkap'] );
         }
         // echo json_encode( $data_uji ).'<br>' ;
 
@@ -457,7 +457,7 @@ class Data_uji extends Admin_Controller {
   private function distance($data_uji, $data_testing )
   {     
         $attrs = array(
-            'data_semester', 'data_IPK', 'data_gaji_ortu', 'data_UKT', 'data_tanggungan'
+            'rencana_tanam', 'umt1', 'umt2', 'nmt1', 'nmt2'
         );
         $value = 0;
         foreach( $attrs as $attr )

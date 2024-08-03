@@ -50,11 +50,11 @@
                   <tr >
                     <th style="width:50px">No</th>
                     <th>Nama</th>
-                    <th>IPK </th>
-                    <th>Semester</th>
-                    <th>Gaji Orang Tua</th>
-                    <th>Tanggungan Orang Tua</th>
-                    <th>UKT</th>
+                    <th>rencana_tanam </th>
+                    <th>umt1</th>
+                    <th>umt2</th>
+                    <th>nmt1</th>
+                    <th>nmt2</th>
                     <th>Label</th>
                     <th>Aksi</th>
                   </tr>
@@ -69,22 +69,22 @@
                             <?php echo $no?>
                         </td>
                         <td>
-                            <?php echo $file->data_name  ?>
+                            <?php echo $file->nama_lengkap  ?>
                         </td>
                         <td>
-                            <?php echo $file->data_IPK ?>
+                            <?php echo $file->rencana_tanam ?>
                         </td>
                         <td>
-                            <?php echo $file->data_semester ?>
+                            <?php echo $file->umt1 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_gaji_ortu ?>
+                            <?php echo $file->umt2 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_tanggungan ?>
+                            <?php echo $file->nmt1 ?>
                         </td>
                         <td>
-                            <?php echo $file->data_UKT ?>
+                            <?php echo $file->nmt2 ?>
                         </td>
                         <td>
                             <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>

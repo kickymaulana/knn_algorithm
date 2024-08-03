@@ -60,20 +60,20 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                <?php if( !empty($this->session->userdata('user_profile_image_path')) ): ?>
-                    <img class="user-image" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('user_profile_image_path') ?> " alt="Jason's Photo" />
+                <?php if( !empty($this->session->userdata('foto')) ): ?>
+                    <img class="user-image" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('foto') ?> " alt="Jason's Photo" />
                 <?php endif; ?>
-                <?php echo $this->session->userdata('user_profile_fullname')?>
+                <?php echo $this->session->userdata('nama_lengkap')?>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <?php if( !empty($this->session->userdata('user_profile_image_path')) ): ?>
-                      <img class="nav-user-photo" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('user_profile_image_path') ?> " alt="Jason's Photo" />
+                  <?php if( !empty($this->session->userdata('foto')) ): ?>
+                      <img class="nav-user-photo" src="<?php echo base_url( "upload/user/" ).$this->session->userdata('foto') ?> " alt="Jason's Photo" />
                   <?php endif; ?>
 
                   <p>
-                    <?php echo $this->session->userdata('user_profile_fullname')?>
+                    <?php echo $this->session->userdata('nama_lengkap')?>
                     <small>Member since Nov. 2012</small>
                   </p>
                 </li>
