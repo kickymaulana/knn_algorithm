@@ -30,6 +30,7 @@ class Home extends Admin_Controller {
     //   $data=$this->m_kost->getData( $this->session->userdata('user_id') );
       $data['data_testing_count'] = $this->m_data_testing->count() ;
       $data['data_uji_count'] = $this->m_data_uji->count() ;
+      $data['data_tanaman'] = $this->m_data_uji->getdatatanaman() ;
       $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') )[0];
       $this->load->view("_admin/_template/header");
       $this->load->view("_admin/_template/sidebar_menu");

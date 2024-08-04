@@ -82,4 +82,12 @@ class M_data_uji extends CI_Model{
         return $this->db->count_all("data_uji");
     }
 
+		public function getdatatanaman(){
+			$sql = "
+		SELECT tanaman, COUNT(tanaman) total
+		 FROM data_uji
+		 GROUP BY tanaman;";
+      return $query = $this->db->query($sql)->result();
+		}
+
 }
