@@ -41,6 +41,7 @@ class User_management extends Admin_Controller {
 		$this->form_validation->set_rules('nama_lengkap','nama_lengkap','trim|required');
 		$this->form_validation->set_rules('alamat','alamat','trim|required');
 		$this->form_validation->set_rules('no_hp','no_hp','trim|required');
+		$this->form_validation->set_rules('tanaman','tanaman','trim|required');
 		$this->form_validation->set_rules('rencana_tanam','rencana_tanam','trim|required');
 		$this->form_validation->set_rules('umt1','umt1','trim|required');
 		$this->form_validation->set_rules('umt2','umt2','trim|required');
@@ -54,6 +55,7 @@ class User_management extends Admin_Controller {
 			$data_profile["no_hp"] = $this->input->post('no_hp');
 
 
+			$data_uji["tanaman"] = $this->input->post('tanaman');
 			$data_uji["rencana_tanam"] = $this->input->post('rencana_tanam');
 			$data_uji["umt1"] = $this->input->post('umt1');
 			$data_uji["umt2"] = $this->input->post('umt2');

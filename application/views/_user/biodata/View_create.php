@@ -78,6 +78,15 @@
                           <span style="color:red"><?php echo form_error("no_hp"); ?></span>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                          <label for="" class="control-label">Tanaman</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" class="form-control"  name="tanaman" value="<?php echo set_value("tanaman"); ?>"/>
+                          <span style="color:red"><?php echo form_error("tanaman"); ?></span>
+                      </div>
+                    </div>
                     <!--  -->
                     <!-- - -->
                     <div class="row">
