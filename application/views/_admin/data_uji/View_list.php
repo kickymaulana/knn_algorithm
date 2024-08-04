@@ -46,6 +46,7 @@
                   <tr >
                     <th style="width:50px">No</th>
                     <th>Nama</th>
+                    <th>Tanaman</th>
                     <th>rencana_tanam </th>
                     <th>umt1</th>
                     <th>umt2</th>
@@ -65,6 +66,9 @@
                         </td>
                         <td>
                             <?php echo $file->nama_lengkap  ?>
+                        </td>
+                        <td>
+                            <?php echo $file->tanaman  ?>
                         </td>
                         <td>
                             <?php echo $file->rencana_tanam ?>
@@ -107,6 +111,7 @@
                   <tr >
                     <th style="width:50px">No</th>
                     <th>Nama</th>
+                    <th>Tanaman</th>
                     <th>Rencana tanam </th>
                     <th>umt1</th>
                     <th>umt2</th>
@@ -127,6 +132,9 @@
                         </td>
                         <td>
                             <?php echo $file->nama_lengkap  ?>
+                        </td>
+                        <td>
+                            <?php echo $file->tanaman  ?>
                         </td>
                         <td>
                             <?php echo $file->rencana_tanam ?>
