@@ -91,17 +91,18 @@ class Data_uji extends Admin_Controller {
             // Jadi dilewat saja, tidak usah diimport
             if($numrow > 1 &&  !empty( $row['A'] ) ){
                 // $data_uji["data_name"] = $row['A'] ;
-                $data_uji["rencana_tanam"] = $row['C'];
-                $data_uji["umt1"] = $row['D'];
-                $data_uji["umt2"] = $row['E'];
-                $data_uji["nmt1"] = $row['F'];
-                $data_uji["nmt2"] = $row['G'];
+                $data_uji["tanaman"] = $row['C'];
+                $data_uji["rencana_tanam"] = $row['D'];
+                $data_uji["umt1"] = $row['E'];
+                $data_uji["umt2"] = $row['F'];
+                $data_uji["nmt1"] = $row['G'];
+                $data_uji["nmt2"] = $row['H'];
                 $data_uji["data_label"] = -1;
                 ##########################################################
                 $data_profile["nama_lengkap"] = $row['B'];
-                $data_profile["alamat"] = $row['H'];
-                $data_profile["email"] = $row['I'];
-                $data_profile["no_hp"] = $row['J'];
+                $data_profile["alamat"] = $row['I'];
+                $data_profile["email"] = $row['J'];
+                $data_profile["no_hp"] = $row['K'];
                 //add user
                 $identitas = time();
                 $data_user["nik"] = $row['A'];
