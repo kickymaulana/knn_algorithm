@@ -71,7 +71,7 @@
                                         <?php echo $file->jarak ?>
                                     </td>
                                     <td>
-                                        <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                                        <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                                     </td>
                                 </tr>
                             <?php 
@@ -93,7 +93,7 @@
                 $NEIGHBOURS =  $DATA['NEIGHBOURS']; 
                 foreach(  array_keys( $NEIGHBOURS ) as $paramName  ) : ?>
                 <div class="box-body">
-                    <h3 class="box-title"> Tetangga pada label "<?php echo  ( $paramName == 1 )? "LULUS" : ( ( $paramName == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>"  </h3><br>
+                    <h3 class="box-title"> Tetangga pada label "<?php echo  ( $paramName == 1 )? "LAYAK" : ( ( $paramName == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>"  </h3><br>
                         <div class="table-responsive">
                             <table id="tableDocument" class="table table-striped table-bordered table-hover">
                             <thead class="thin-border-bottom">
@@ -121,7 +121,7 @@
                                             <?php echo $file->jarak ?>
                                         </td>
                                         <td>
-                                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                                            <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                                         </td>
                                     </tr>
                                 <?php 
@@ -178,7 +178,7 @@
                                         <?php echo $file->nmt2 ?>
                                     </td>
                                     <td>
-                                        <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                                        <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                                     </td>
                                 </tr>
                                 <?php 
@@ -246,7 +246,7 @@
                             <?php echo $file->nmt2 ?>
                         </td>
                         <td>
-                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                            <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                         </td>
                         <td>
                             <?php echo  ( $file->tetangga_terdekat)  ?>

@@ -88,7 +88,7 @@
                             <?php echo $file->nmt2 ?>
                         </td>
                         <td>
-                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                            <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                         </td>
                         <td>
                             <?php echo  ( $file->tetangga_terdekat)  ?>

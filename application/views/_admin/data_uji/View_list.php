@@ -152,7 +152,7 @@
                             <?php echo $file->nmt2 ?>
                         </td>
                         <td>
-                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                            <?php echo  ( $file->data_label == 1 )? "LAYAK" : ( ( $file->data_label == 0 )? "TIDAK LAYAK" : "BELUM DI UJI"   )  ?>
                         </td>
                         <td>
                             <!-- <a href="<?php echo site_url('admin/data_uji/uji/').$file->data_id;?>" class="btn btn-sm btn-success">Uji</a> -->
