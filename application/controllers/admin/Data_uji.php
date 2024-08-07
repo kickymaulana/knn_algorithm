@@ -378,6 +378,7 @@ class Data_uji extends Admin_Controller {
         $data_uji = $this->m_data_uji_normalized->read( -1, "array" );
         $data_testing = $this->m_data_testing_normalized->read( -1, "array" );
 
+
         $min_max = $this->m_data_testing->get_min_max( );
         // echo json_encode( $data_testing ).'<br>' ;
         // return;
