@@ -55,7 +55,7 @@
                     <th>umt2</th>
                     <th>nmt1</th>
                     <th>nmt2</th>
-                    <th>Label</th>
+                    <th>luas lahan</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -87,7 +87,7 @@
                             <?php echo $file->nmt2 ?>
                         </td>
                         <td>
-                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
+                            <?php echo $file->luas_lahan ?>
                         </td>
                         <td>
                             <a href="<?php echo site_url('admin/data_testing/edit/').$file->data_id;?>" class="btn-sm btn-primary">Edit</a>
@@ -125,7 +125,6 @@
                     <th>umt2</th>
                     <th>nmt1</th>
                     <th>nmt2</th>
-                    <th>Label</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -154,9 +153,6 @@
                         </td>
                         <td>
                             <?php echo $file->nmt2 ?>
-                        </td>
-                        <td>
-                            <?php echo  ( $file->data_label == 1 )? "LULUS" : ( ( $file->data_label == 0 )? "TIDAK LULUS" : "BELUM DI UJI"   )  ?>
                         </td>
                       </tr>
                     <?php 

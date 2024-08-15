@@ -213,7 +213,19 @@ class Data_testing extends Admin_Controller {
                 $data_test["umt2"] = $row['D'];
                 $data_test["nmt1"] = $row['E'];
                 $data_test["nmt2"] = $row['F'];
-                $data_test["data_label"] = $row['G'];
+		if($row['B'] > 0.00 && $row['B'] <= 2){
+                	$data_test["data_label"] = "1";
+		} else {
+                	$data_test["data_label"] = "0";
+		}
+		if($row['B'] > 0.00 && $row['B'] <= 1){
+                	$data_test["luas_lahan"] = "KECIL";
+
+		} else if($row['B'] > 1.00 && $row['B'] <= 2){
+                	$data_test["luas_lahan"] = "TINGGI";
+		} else {
+                	$data_test["luas_lahan"] = "TIDAK TERMASUK";
+		}
                 // Kita push (add) array data ke variabel data
                 array_push($data_testing, $data_test ) ;
             }
