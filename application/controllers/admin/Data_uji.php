@@ -289,7 +289,7 @@ class Data_uji extends Admin_Controller {
   {
 
 				
-       /* if( !($_POST) ) redirect(site_url('admin/data_uji'));  
+       if( !($_POST) ) redirect(site_url('admin/data_uji'));  
 
         $data_uji = $this->m_data_uji_normalized->read_single_table( -1, "array" );
         $data_testing = $this->m_data_testing_normalized->read( -1, "array" );
@@ -367,11 +367,22 @@ class Data_uji extends Admin_Controller {
                 'message' =>  'terjadi kesalahan saat menguji data'
               ));
               redirect(site_url('admin/data_uji'));
-				}*/
+				}
 
   }
 
   public function uji_batch_2(  ){
+
+// Nonaktifkan semua error kecuali error fatal
+error_reporting(E_ERROR);
+
+// Kode Anda di sini
+// ...
+
+// Aktifkan kembali error reporting (opsional)
+error_reporting(E_ALL);
+
+
         if( !($_POST) ) redirect(site_url('admin/data_uji'));  
 
         // $data_uji = $this->m_data_uji_normalized->read_single_table( -1, "array" );
@@ -427,7 +438,7 @@ class Data_uji extends Admin_Controller {
             }
 
 
-            $lulus = ( $NEIGHBOUR[ 1 ] )  ? count( $NEIGHBOUR[ 1 ] )  : 0;
+            $lulus = ( @$NEIGHBOUR[ 1 ] )  ? count( $NEIGHBOUR[ 1 ] )  : 0;
 
             $sum = 0;
             $count = count( $NEIGHBOUR[ 1 ] ) ; 
@@ -455,8 +466,8 @@ class Data_uji extends Admin_Controller {
         $data['page_name'] = "Hasil Data Uji";
         $this->load->view("_admin/_template/header");
         $this->load->view("_admin/_template/sidebar_menu");
-            $this->load->view("_admin/data_uji/View_detail_uji_batch",$data);
-				$this->load->view("_admin/_template/footer");
+        $this->load->view("_admin/data_uji/View_detail_uji_batch",$data);
+	$this->load->view("_admin/_template/footer");
 
   }
 
