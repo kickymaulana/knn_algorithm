@@ -438,7 +438,7 @@ error_reporting(E_ALL);
             }
 
 
-            $lulus = ( @$NEIGHBOUR[ 1 ] )  ? count( $NEIGHBOUR[ 1 ] )  : 0;
+            /*$lulus = ( @$NEIGHBOUR[ 1 ] )  ? count( $NEIGHBOUR[ 1 ] )  : 0;
 
             $sum = 0;
             $count = count( $NEIGHBOUR[ 1 ] ) ; 
@@ -446,7 +446,22 @@ error_reporting(E_ALL);
             {
                 $sum += $_length['jarak'];
             }
-            $avrg = $sum / $count; // perhitungan nilai jarak rata-rata
+            $avrg = $sum / $count; // perhitungan nilai jarak rata-rata*/
+
+	//kode dari chat gpt berhasil
+	$lulus = ( isset($NEIGHBOUR[1]) && count($NEIGHBOUR[1]) > 0 ) ? count($NEIGHBOUR[1]) : 0;
+
+	$sum = 0;
+	$count = isset($NEIGHBOUR[1]) ? count($NEIGHBOUR[1]) : 0; 
+	if($count > 0) {
+	    foreach( $NEIGHBOUR[1] as $_length ) {
+		$sum += $_length['jarak'];
+	    }
+	    $avrg = $sum / $count;
+	} else {
+	    $avrg = 0; // atau nilai default lainnya
+	}
+
 
             
             $data_uji[ $i ]['data_label']        = $terbesar[0]['data_label'];//update nilai label (lulus / tidak lulus)
