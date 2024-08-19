@@ -29,7 +29,7 @@ class Data_testing extends Admin_Controller {
       $this->m_log->inserLog( $log );
     //   $data=$this->m_kost->getData( $this->session->userdata('user_id') );
     //   $data['files'] = $data;
-      $data['page_name'] = "Data Testing";
+      $data['page_name'] = "Data Training";
       $data['user'] = $this->m_user->getUser( $this->session->userdata('nik') )[0];
       $data['files'] = $this->m_data_testing->read( );
       $data['files_normalized'] = $this->m_data_testing_normalized->read(  );
