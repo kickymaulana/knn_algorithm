@@ -41,23 +41,23 @@
       <?php if( !empty($user) ): ?>
         <div class="row">
           <div class="col-xs-6"> 
-            <h2><?php echo $user[0]->user_profile_fullname ." ( ".$user[0]->user_username." ) "  ?> </h2>
-            <h4> Alamat : <?php echo $user[0]->user_profile_address ?> </h4>
-            <h4> <?php echo $user[0]->user_profile_email ?> </h4>
-            <h4> <?php echo $user[0]->user_profile_phone ?> </h4>
+            <h2><?php echo $user[0]->nama_lengkap ." ( ".$user[0]->username." ) "  ?> </h2>
+            <h4> Alamat : <?php echo $user[0]->alamat ?> </h4>
+            <h4> <?php echo $user[0]->email ?> </h4>
+            <h4> <?php echo $user[0]->no_hp ?> </h4>
             <br><br>
             <a href="<?php echo site_url('admin/profile/edit') ?>" class="btn btn-white btn-info btn-bold btn-m">
                 Edit 
             </a>
         </div>
-        <div class="col-xs-6"> 
+        <!--<div class="col-xs-6"> 
           <center>
               <div style="background-color: grey ; padding : 8px">
-              <img src="<?php echo base_url()."upload/user/".$user[0]->user_profile_image_path  ?>" alt="" height="300" width="auto" >
+              <img src="<?php echo base_url()."upload/user/".$user[0]->foto  ?>" alt="" height="300" width="auto" >
               </div>
             </center>
           </div>
-        </div>
+        </div>-->
         <?php endif; ?>
       </div>
   </div>

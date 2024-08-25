@@ -43,19 +43,19 @@
                 <div class="row  ">
                     <div class="col-xs-6 ">
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Full Name" name="user_profile_fullname" value="<?php echo set_value('user_profile_fullname', $user[0]->user_profile_fullname); ?>"/>
+                        <input type="text" class="form-control" placeholder="Full Name" name="nama_lengkap" value="<?php echo set_value('nama_lengkap', $user[0]->nama_lengkap); ?>"/>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                        <span style="color:red"><?php echo form_error('user_profile_fullname'); ?></span>
+                        <span style="color:red"><?php echo form_error('nama_lengkap'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="email" class="form-control" placeholder="Email" name="user_profile_email" value="<?php echo set_value('user_profile_email', $user[0]->user_profile_email); ?>"/>
+                        <input type="email" class="form-control" placeholder="Email" name="email" value="<?php echo set_value('email', $user[0]->email); ?>"/>
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                        <span style="color:red"><?php echo form_error('user_profile_email'); ?></span>
+                        <span style="color:red"><?php echo form_error('email'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Address" name="user_profile_address" value="<?php echo set_value('user_profile_address', $user[0]->user_profile_address); ?>"/>
+                        <input type="text" class="form-control" placeholder="Address" name="alamat" value="<?php echo set_value('alamat', $user[0]->alamat); ?>"/>
                         <span class="ace-icon fa fa-location-arrow form-control-feedback"></span>
-                        <span style="color:red"><?php echo form_error('user_profile_address'); ?></span>
+                        <span style="color:red"><?php echo form_error('alamat'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
                         <input type="password" class="form-control" placeholder="Password" name="user_password" value="<?php echo set_value('user_password'); ?>"/>
@@ -63,9 +63,9 @@
                         <span style="color:red"><?php echo form_error('user_password'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="number" class="form-control" placeholder="Phone" name="user_profile_phone" value="<?php echo set_value('user_profile_phone',  $user[0]->user_profile_phone); ?>"/>
+                        <input type="number" class="form-control" placeholder="Phone" name="no_hp" value="<?php echo set_value('no_hp',  $user[0]->no_hp); ?>"/>
                         <span class="ace-icon fa fa-user form-control-feedback"></span>
-                        <span style="color:red"><?php echo form_error('user_profile_phone'); ?></span>
+                        <span style="color:red"><?php echo form_error('no_hp'); ?></span>
                     </div>
                     <!--  -->
                     <label for="">Foto </label>
@@ -79,7 +79,7 @@
                     <div class="col-xs-6"> 
                         <center>
                             <div style="background-color: grey ; padding : 8px">
-                            <img src="<?php echo base_url()."upload/user/".$user[0]->user_profile_image_path  ?>" alt="" height="300" width="auto" >
+                            <img src="<?php echo base_url()."upload/user/".$user[0]->foto  ?>" alt="" height="300" width="auto" >
                             </div>
                         </center>
                     </div>
@@ -87,7 +87,7 @@
                 <br>
                 <div class="row">
                     <div class="col-xs-12">
-                    <input id="" type="text" name="user_old_images" value="<?php echo $user[0]->user_profile_image_path ?>"  hidden readonly />
+                    <input id="" type="text" name="user_old_images" value="<?php echo $user[0]->foto ?>"  hidden readonly />
                         <button type="submit" class="pull-right btn btn-sm btn-primary ">
                             <i class="ace-icon fa fa-paper-plane"></i>
                             <span class="bigger-110">Submit</span>
