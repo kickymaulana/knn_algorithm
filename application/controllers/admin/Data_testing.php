@@ -41,7 +41,7 @@ class Data_testing extends Admin_Controller {
 
   public function create()
   {     
-        $data['page_name'] = "Tambah Data Testing";
+        $data['page_name'] = "Tambah Data Traning";
         $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
         // echo var_dump( $inpust );
         foreach($inpust as $ind=>$val) 
@@ -108,7 +108,7 @@ class Data_testing extends Admin_Controller {
 
   public function edit( $data_id = null )
   {     
-        $data['page_name'] = "Edit Data Testing";
+        $data['page_name'] = "Edit Data Training";
         $inpust =  ( $this->input->post('nama_lengkap[]') == null )? array(): $this->input->post('nama_lengkap[]')  ;
         // echo var_dump( $inpust );
         foreach($inpust as $ind=>$val) 

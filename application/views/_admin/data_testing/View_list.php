@@ -55,7 +55,6 @@
                     <th>umt2</th>
                     <th>nmt1</th>
                     <th>nmt2</th>
-                    <th>luas lahan</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -85,9 +84,6 @@
                         </td>
                         <td>
                             <?php echo $file->nmt2 ?>
-                        </td>
-                        <td>
-                            <?php echo $file->luas_lahan ?>
                         </td>
                         <td>
                             <a href="<?php echo site_url('admin/data_testing/edit/').$file->data_id;?>" class="btn-sm btn-primary">Edit</a>

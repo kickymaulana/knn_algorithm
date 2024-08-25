@@ -22,7 +22,7 @@
         <div class="inner">
           <h3><?php echo $data_testing_count ?></h3>
 
-          <p>Data Testing</p>
+          <p>Data Training</p>
         </div>
         <div class="icon">
           <i class="ion ion-person"></i>
