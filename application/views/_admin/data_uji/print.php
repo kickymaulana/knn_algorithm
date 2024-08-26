@@ -1,50 +1,15 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-    <h1>
-    <?php echo $page_name ?> <a class="btn btn-primary" href="<?php echo site_url('admin/data_uji/cetak/'.$quota);?>">print</a>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-    </section>
-    <!-- alert  -->
-    <?php
-    if($this->session->flashdata('info')){
-        if( $this->session->flashdata('info')['from'] ){
-            echo"
-            <div class=' alert alert-success alert-dismissible'>
-            <h4><i class='icon fa fa-globe'></i> Information!</h4>".
-            $this->session->flashdata('info')["message"].
-            "</div>
-            ";
-        }else{
-            echo"
-            <div class='alert alert-danger alert-dismissible'>
-            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-            <h4><i class='icon fa fa-ban'></i> Alert!</h4>".
-            $this->session->flashdata('info')["message"].
-            "</div>
-            ";
-        }
-      }
-    ?>
-    <!-- alert  -->
-    <!-- Main content -->
-  <section class="content">
-    <div class="box">
-        <div class="box-header">
-          <h3 class="box-title"><?php echo $page_name ?></h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <div class="table-responsive">
-              <table id="tableDocument" class="table table-striped table-bordered table-hover">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  </head>
+  <body>
+              <table id="tableDocument" class="table table-striped table-bordered table-hover" border="1">
                 <thead class="thin-border-bottom">
                   <tr >
-                    <th style="width:50px">No</th>
+                    <th>No</th>
                     <th>Nama</th>
                     <th>tanaman</th>
                     <th>rencana_tanam </th>
@@ -99,10 +64,8 @@
                     endforeach;?>
                 </tbody>
               </table>
-          </div>   
-      </div>
-    </div>
-
-    
-  </section>
-</div>
+<script type="text/javascript">
+	window.print();
+</script>
+  </body>
+</html>

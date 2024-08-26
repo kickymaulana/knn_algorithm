@@ -51,11 +51,23 @@ class Data_uji extends Admin_Controller {
     $data['files']  = $this->m_data_uji_normalized->rangking(-1,  "object", $quota );
     // echo json_encode( $data['files'] );return;
     $data['page_name'] = "Perengkingan";
+    $data['quota'] = $quota;
 
     $this->load->view("_admin/_template/header");
       $this->load->view("_admin/_template/sidebar_menu");
           $this->load->view("_admin/data_uji/View_rangking",$data);
       $this->load->view("_admin/_template/footer");  
+  }
+
+  public function cetak(){
+    $quota = $this->input->get('quota');
+    $data['files']  = $this->m_data_uji_normalized->rangking(-1,  "object", $quota );
+    // echo json_encode( $data['files'] );return;
+    $data['page_name'] = "Perengkingan";
+    $data['quota'] = $quota;
+
+    $this->load->view("_admin/data_uji/print", $data);
+   	
   }
   public function import(  )
   {
