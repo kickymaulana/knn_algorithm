@@ -4,8 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
   </head>
   <body>
+ <h1 style="text-align: center;">Daftar Perengkingan Penerima Pupuk Subsidi</h1>
               <table id="tableDocument" class="table table-striped table-bordered table-hover" border="1">
                 <thead class="thin-border-bottom">
                   <tr >
