@@ -58,9 +58,9 @@
                         <span style="color:red"><?php echo form_error('alamat'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input type="password" class="form-control" placeholder="Password" name="user_password" value="<?php echo set_value('user_password'); ?>"/>
+                        <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo set_value('password'); ?>"/>
                         <span class="ace-icon fa fa-lock form-control-feedback"></span>
-                        <span style="color:red"><?php echo form_error('user_password'); ?></span>
+                        <span style="color:red"><?php echo form_error('password'); ?></span>
                     </div>
                     <div class="form-group has-feedback">
                         <input type="number" class="form-control" placeholder="Phone" name="no_hp" value="<?php echo set_value('no_hp',  $user[0]->no_hp); ?>"/>

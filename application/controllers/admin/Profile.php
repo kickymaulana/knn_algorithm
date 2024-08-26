@@ -80,7 +80,7 @@ class Profile extends Admin_Controller {
 
         $data_user_profile_param['nik'] = $this->session->userdata('nik');
 
-        if( !empty( $this->input->post('user_password') ) )
+        if( !empty( $this->input->post('password') ) )
         {
             $data_user['password'] = md5(  $this->input->post('password') );
             $this->m_user->update( $data_user, $data_user_profile_param );
