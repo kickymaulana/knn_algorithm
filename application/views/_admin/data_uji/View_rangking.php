@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <h1>
-    <?php echo $page_name ?> <a class="btn btn-primary" href="<?php echo site_url('admin/data_uji/cetak/'.$quota);?>">print</a>
+    <?php echo $page_name ?> <a class="btn btn-primary" href="<?php echo site_url('admin/data_uji/cetak?quota='.$quota);?>">print</a>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
